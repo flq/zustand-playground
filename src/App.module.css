@@ -1,7 +1,46 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    --borderColor: black;
+    --backgroundColor: #ede5e5;
+}
+
+.reset-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 .app {
     display: grid;
+    padding: 1em;
+    background-color: var(--backgroundColor);
 }
 
 .header {
-    font-size:large;
+    font-size:larger;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--borderColor)
+}
+
+.header > input {
+    margin: 0 1em;
+    font-size:larger;
+}
+
+.items {
+    composes: reset-list;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1em;
+    padding: 1em 0;
+}
+
+.item {
+    padding: 0.5em;
+    border: 1px solid var(--borderColor);
+    border-radius: 5px;
+}
+
+.item > h3 {
+    margin: 0;
 }
