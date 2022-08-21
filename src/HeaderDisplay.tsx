@@ -3,13 +3,14 @@ import { useAppStore } from "./AppStore";
 import styles from "./App.module.css";
 
 export function HeaderDisplay() {
-  const { header, changeHeader } = useAppStore();
+  const { title } = useAppStore(a => a.header);
+  const changeHeader = useAppStore(a => a.changeHeader);
   return (
     <header className={styles.header}>
       <label>This is the data header:</label>
       <input
         type="text"
-        value={header.title}
+        value={title}
         onChange={(e) => changeHeader(e.target.value)}
       />
     </header>
